@@ -1,0 +1,11 @@
+.grid {
+  padding: 0 calc(50vw - 650px);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 100px;
+}
+
+
+

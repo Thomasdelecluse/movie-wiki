@@ -1,0 +1,29 @@
+.containeur{
+  display: flex;
+  padding-left:300px;
+}
+.presentation{
+  padding-top: 100px;
+  position: relative;
+  height: 1060px;
+  background: hsla(214, 92%, 47%, 1);
+  background: linear-gradient(12deg, hsla(214, 92%, 47%, 1) 0%, hsla(231, 85%, 24%, 1) 100%);
+  background: -moz-linear-gradient(12deg, hsla(214, 92%, 47%, 1) 0%, hsla(231, 85%, 24%, 1) 100%);
+  background: -webkit-linear-gradient(12deg, hsla(214, 92%, 47%, 1) 0%, hsla(231, 85%, 24%, 1) 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#0968E5", endColorstr="#091970", GradientType=1 );
+}
+.txt{
+  padding-top: 150px;
+  color: white;
+}
+.wave{
+  background-image: url(/assets/img/wave1.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 1000px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-position-y: 100%;
+}

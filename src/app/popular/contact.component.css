@@ -1,0 +1,21 @@
+.page{
+
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 80px;
+  padding-left: 200px;
+  padding-right: 200px;
+}
+.grid-item {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.img{
+  width: 100%;
+}

@@ -1,0 +1,24 @@
+.navbar{
+  position: fixed !important; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%;
+  background: hsla(214, 92%, 47%, 1);
+
+  background: linear-gradient(12deg, hsla(214, 92%, 47%, 1) 0%, hsla(231, 85%, 24%, 1) 100%);
+
+  background: -moz-linear-gradient(12deg, hsla(214, 92%, 47%, 1) 0%, hsla(231, 85%, 24%, 1) 100%);
+
+  background: -webkit-linear-gradient(12deg, hsla(214, 92%, 47%, 1) 0%, hsla(231, 85%, 24%, 1) 100%);
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#0968E5", endColorstr="#091970", GradientType=1 );
+  height: 70px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.navbar-nav{
+  justify-content: right;
+  width: 100%;
+}
+.navbar-nav{
+  padding-right: 150px;
+}
+

@@ -1,0 +1,17 @@
+header {
+  position: relative;
+  z-index: 1000;
+}
+*{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+.cont{
+  display: grid;
+}
+
+
+
+
+
+

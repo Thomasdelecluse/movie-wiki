@@ -1,0 +1,24 @@
+<div class="wrap">
+  <div class="main">
+    <input type="checkbox" id="chk" aria-hidden="true">
+
+    <div class="signup">
+      <form [formGroup]="inscription" (ngSubmit)="onFormSubmitIns()">
+        <label  for="chk" aria-hidden="true"><strong>Inscription</strong></label>
+        <input class="form-control" type="text" formControlName="prenom"  placeholder="Prenom" required="">
+        <input class="form-control" type="email" formControlName="login"  placeholder="Email" required="">
+        <input class="form-control" type="password" formControlName="pass"  placeholder="Mot de passe" required="">
+        <button>Inscription</button>
+      </form>
+    </div>
+
+    <div class="login">
+      <form [formGroup]="connexion" (ngSubmit)="onFormSubmitAuth()" >
+        <label for="chk" aria-hidden="true"><strong>Connexion</strong></label>
+        <input class="form-control" type="email" formControlName="login" placeholder="Email" required="">
+        <input class="form-control" type="password" formControlName="pass" placeholder="Mot de passe" required="">
+        <button>Connexion</button>
+      </form>
+    </div>
+  </div>
+</div>

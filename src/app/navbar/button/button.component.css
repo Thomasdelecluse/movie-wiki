@@ -1,0 +1,43 @@
+.nav-item{
+  margin-right: 35px;
+}
+.nav-link{
+  position: relative;
+  overflow: hidden;
+
+}
+.bloc-couleur {
+  position:relative;
+  display:inline-block;
+  overflow:hidden;
+  text-align:center;
+  vertical-align:middle;
+  border-radius: 10px;
+
+}
+.couleur-remplissage::before{
+  content:'';
+  display:block;
+  position:absolute;
+  bottom:0;
+  top:0;
+  left:0;
+  right:0;
+  background-color: rgb(255, 255, 255);
+  transition :  0.70s ease-in-out;
+  transition-property : top, bottom, left,right, border-width;
+}
+.to-middle-top:before{
+  transform : skew(90deg, 0deg);
+  transition-property : transform;
+
+}
+.to-middle-top:hover:before{
+  transform : skew(0deg, 0deg);
+}
+.nav-link.active:hover {
+  color: black !important;
+}
+.nav-link.active {
+  color: white!important;
+}
