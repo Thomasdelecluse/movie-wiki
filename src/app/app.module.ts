@@ -6,10 +6,7 @@ import {NavbarComponent} from './navbar/navbar.component';
 import {ButtonComponent} from './navbar/button/button.component';
 import {FooterComponent} from './footer/footer.component';
 import {PresentationComponent} from './presentation/presentation.component';
-import {CompetenceComponent} from './competence/competence.component';
-import {ContactComponent} from './popular/contact.component';
-import {GridComponent} from './competence/grid/grid.component';
-import {CercleComponent} from './competence/grid/cercle/cercle.component';
+import {PopularComponent} from './popular/popular.component';
 import {AppRoutingModule} from './app-routing.module';
 import {LoginComponent} from './login/login.component';
 import {HomeComponent} from './home/home.component';
@@ -23,10 +20,7 @@ import {HttpClientModule} from "@angular/common/http";
     ButtonComponent,
     FooterComponent,
     PresentationComponent,
-    CompetenceComponent,
-    ContactComponent,
-    GridComponent,
-    CercleComponent,
+    PopularComponent,
     LoginComponent,
     HomeComponent,
   ],

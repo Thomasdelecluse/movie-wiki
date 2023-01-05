@@ -16,14 +16,3 @@
   padding-top: 150px;
   color: white;
 }
-.wave{
-  background-image: url(/assets/img/wave1.svg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 1000px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-position-y: 100%;
-}

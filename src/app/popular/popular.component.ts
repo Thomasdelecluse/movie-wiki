@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {popularMovie, PopularMoviesType} from 'src/service/popularMovie.service';
 @Component({
   selector: 'app-popular',
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css']
+  templateUrl: './popular.component.html',
+  styleUrls: ['./popular.component.css']
 })
-export class ContactComponent implements OnInit {
+export class PopularComponent implements OnInit {
   movie: PopularMoviesType = {
     results: []
   };
