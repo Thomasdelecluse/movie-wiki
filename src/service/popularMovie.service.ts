@@ -24,11 +24,11 @@ export interface PopularMoviesType {
   providedIn: 'root'
 })
 export class popularMovie {
-  private apiUrl = 'https://api.themoviedb.org/3/movie/popular?api_key=0c0e7b2ac6b9afd4ee3aeb83a772ef7a&language=en-US';
+  private apiUrl = 'https://api.themoviedb.org/3/movie/popular?api_key=0c0e7b2ac6b9afd4ee3aeb83a772ef7a&language=fr-FR';
 
   constructor(private http: HttpClient) { }
 
-  getPopularMovies() {
-    return this.http.get<PopularMoviesType>(this.apiUrl);
+  getPopularMovies(callable: (popularMovies: PopularMoviesType) => void) {
+    return this.http.get<PopularMoviesType>(this.apiUrl).subscribe(callable);
   }
 }
