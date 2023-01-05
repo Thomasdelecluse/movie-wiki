@@ -1,3 +1,37 @@
 <div id="presentation" class="presentation">
 
+
+
+  <div class="container">
+
+
+    <input type="radio" name="slider" class="d-none" id="s1" checked>
+    <input type="radio" name="slider" class="d-none" id="s2">
+    <input type="radio" name="slider" class="d-none" id="s3">
+    <input type="radio" name="slider" class="d-none" id="s4">
+    <input type="radio" name="slider" class="d-none" id="s5">
+
+
+    <div class="cards">
+      <ng-container *ngFor="let movie of movies.results; index as i">
+        <label [for]="'s' + i" [id]="'slide' + i">
+          <div class="card">
+            <div class="image">
+              <img class="img" [src]="baseUrl + 'w300/' + movie.poster_path" alt="La photo ne charge pas ">
+              <div class="dots">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+            <div class="infos">
+              <span class="claimedRight" >{{ movie.title }}</span>
+            </div>
+            <a href="" class="btn-contact">details</a>
+          </div>
+        </label>
+      </ng-container>
+    </div>
+
+  </div>
 </div>
