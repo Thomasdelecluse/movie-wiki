@@ -108,12 +108,12 @@ input {
 
 .dots div:nth-child(2){
 
-  background-color: #5B85F9;
+  background-color: #B1A7A6;
 }
 
 .dots div:nth-child(3){
 
-  background-color: #000;
+  background-color: #F5F3F4;
 }
 
 .card .infos{
@@ -146,7 +146,7 @@ input {
 }
 
 .card .btn-contact{
-
+  border: none;
   width: 100%;
   height: 60px;
   margin: 2px auto;
@@ -159,7 +159,7 @@ input {
   font-size: 25px;
   letter-spacing: 10px;
   font-weight: 700;
-  transition: all .7s ease;
+
 }
 
 
@@ -194,7 +194,7 @@ input {
 #s5:checked~.cards #slide5 {
   box-shadow: 0 25px 50px 0 rgba(0, 0, 0, 50%);
   transform: translate3d(0, 0, 0);
-  --current-color1: #00b7fa;
+  --current-color1: #E5383B;
   --current-color2: #ECEAED;
 }
 
@@ -225,4 +225,7 @@ input {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.btn-contact:active {
+  box-shadow: inset 0 5px 30px rgba(0, 0, 0, 0.5);
 }
