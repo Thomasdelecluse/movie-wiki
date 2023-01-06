@@ -5,13 +5,13 @@ import {AppComponent} from './app.component';
 import {NavbarComponent} from './navbar/navbar.component';
 import {ButtonComponent} from './navbar/button/button.component';
 import {FooterComponent} from './footer/footer.component';
-import {PresentationComponent} from './presentation/presentation.component';
-import {PopularComponent} from './popular/popular.component';
+import {RateComponent} from './rate/rate.component';
 import {AppRoutingModule} from './app-routing.module';
 import {LoginComponent} from './login/login.component';
 import {HomeComponent} from './home/home.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import {PopularComponent} from "./popular/popular.component";
 
 @NgModule({
   declarations: [
@@ -19,8 +19,8 @@ import {HttpClientModule} from "@angular/common/http";
     NavbarComponent,
     ButtonComponent,
     FooterComponent,
-    PresentationComponent,
     PopularComponent,
+    RateComponent,
     LoginComponent,
     HomeComponent,
   ],
