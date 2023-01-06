@@ -19,16 +19,42 @@ export interface PopularMoviesType {
     vote_count: number;
   }[]
 }
+export interface RateMoviesType {
+  results: {
+    adult: boolean;
+    backdrop_path: string;
+    genre_ids: number[];
+    id: number;
+    original_language: string;
+    original_title: string;
+    overview: string;
+    popularity: number;
+    poster_path: string;
+    release_date: string;
+    title: string;
+    video: boolean;
+    vote_average: number;
+    vote_count: number;
+  }[]
+}
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class popularMovie {
-  private apiUrl = 'https://api.themoviedb.org/3/movie/popular?api_key=0c0e7b2ac6b9afd4ee3aeb83a772ef7a&language=fr-FR';
+export class PopularMovie {
+  private root = 'https://api.themoviedb.org/3';
+  private apiKey = '0c0e7b2ac6b9afd4ee3aeb83a772ef7a';
+  private language = 'fr-FR';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getPopularMovies(callable: (popularMovies: PopularMoviesType) => void) {
-    return this.http.get<PopularMoviesType>(this.apiUrl).subscribe(callable);
+    const url = `${this.root}/movie/popular?api_key=${this.apiKey}&language=${this.language}`;
+    return this.http.get<PopularMoviesType>(url).subscribe(callable);
+  }
+
+  getTopRateMovies(callable: (popularMovies: RateMoviesType) => void) {
+    const url = `${this.root}/trending/all/week?api_key=${this.apiKey}&language=${this.language}`;
+    return this.http.get<RateMoviesType>(url).subscribe(callable);
   }
 }

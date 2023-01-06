@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {popularMovie, PopularMoviesType} from 'src/service/popularMovie.service';
+import {PopularMovie, PopularMoviesType} from 'src/service/popularMovie.service';
 
 @Component({
   selector: 'app-popular',
@@ -12,7 +12,7 @@ export class PopularComponent implements OnInit {
   };
   baseUrl = 'https://image.tmdb.org/t/p/';
 
-  constructor(private popularMovie: popularMovie) {
+  constructor(private popularMovie: PopularMovie) {
   }
 
   ngOnInit(): void {
