@@ -3,7 +3,7 @@
   padding-left:300px;
 }
 .presentation{
-  padding-top: 100px;
+  padding-top: 150px;
   position: relative;
   height: 1060px;
   background: hsl(359, 87%, 21%);
@@ -15,7 +15,26 @@
   padding-top: 150px;
   color: white;
 }
+.popular{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #660708;
+  width: 500px;
+  height: 80px;
+  border-radius: 10px;
+  box-shadow: #001b2f 0px 0px 10px;
+  margin: 0 auto;
+}
+.popular h2{
+  font-weight: bold;
+  color: white;
+}
+
+
+
 /*carousel*/
+
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@200;300;400;600;700&display=swap');
 
 
@@ -119,7 +138,7 @@ input {
 .card .infos{
 
   display: block;
-  text-align: end;
+  text-align: center;
   padding-top: 5px;
 }
 
