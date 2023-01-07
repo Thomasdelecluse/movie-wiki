@@ -1,0 +1,24 @@
+.cont{
+  padding-top: 80px;
+  background-color: #B1A7A6;
+  min-height: calc(100vh - 80px - 49px);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 80px;
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-bottom: 200px;
+  padding-top: 160px;
+}
+.grid-item {
+  border-radius: 5px;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  display: flex;
+}
+.grid-item img{
+  width: 100%;
+}

@@ -54,7 +54,13 @@ export class PopularMovie {
   }
 
   getTopRateMovies(callable: (popularMovies: RateMoviesType) => void) {
-    const url = `${this.root}/trending/all/week?api_key=${this.apiKey}&language=${this.language}`;
+    const url = `${this.root}/trending/all/day?api_key=${this.apiKey}&language=${this.language}`;
     return this.http.get<RateMoviesType>(url).subscribe(callable);
   }
+
+  getSearchMovies(request: string,callable: (popularMovies: any) => void) {
+    const url = `${this.root}/search/multi?api_key=${this.apiKey}&language=${this.language}&query=${request}`;
+    return this.http.get(url).subscribe(callable);
+  }
+
 }

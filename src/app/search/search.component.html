@@ -1,1 +1,13 @@
-<p>search works!</p>
+<header>
+  <app-navbar></app-navbar>
+</header>
+<div class="cont">
+  <div class="grid">
+    <ng-container *ngFor="let movie of results.results">
+      <div class="grid-item" *ngIf="movie.poster_path">
+        <img class="img" [src]="baseUrl + 'w300/' + movie.poster_path">
+      </div>
+    </ng-container>
+  </div>
+</div>
+<app-footer></app-footer>
