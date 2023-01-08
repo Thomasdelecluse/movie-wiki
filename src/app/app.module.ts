@@ -13,6 +13,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {PopularComponent} from "./popular/popular.component";
 import { SearchComponent } from './search/search.component';
+import { DetailsComponent } from './details/details.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { SearchComponent } from './search/search.component';
     LoginComponent,
     HomeComponent,
     SearchComponent,
+    DetailsComponent,
   ],
   imports: [
     BrowserModule,
