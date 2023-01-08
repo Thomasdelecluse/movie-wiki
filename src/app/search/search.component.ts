@@ -1,5 +1,8 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {SearchService} from "../../service/search.service";
+import {NavbarComponent} from "../navbar/navbar.component";
+import {DataSharingService} from "../../service/data-sharing.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-search',
@@ -8,14 +11,22 @@ import {SearchService} from "../../service/search.service";
 })
 export class SearchComponent implements AfterViewInit {
   results: any = {};
-
-  constructor(private searchService: SearchService) {
+  public test: string | undefined;
+  constructor(private searchService: SearchService, private dataSharingService: DataSharingService, private router: Router) {
   }
+
   baseUrl = 'https://image.tmdb.org/t/p/';
   ngAfterViewInit(): void {
+    this.dataSharingService.getTest().subscribe((value) => {
+      this.test = value;
+    });
     this.searchService.getResults().subscribe((response) => {
       this.results = response;
+
     })
+  }
+  getidmovie(id: number) {
+    this.router.navigate(['/details', id]);
   }
 
 }

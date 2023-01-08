@@ -3,6 +3,7 @@ import {FormControl, FormGroup} from "@angular/forms";
 import {PopularMovie} from "../../service/popularMovie.service";
 import {SearchService} from "../../service/search.service";
 import {Router} from "@angular/router";
+import {DataSharingService} from "../../service/data-sharing.service";
 
 @Component({
   selector: 'app-navbar',
@@ -11,7 +12,7 @@ import {Router} from "@angular/router";
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private popularMovie: PopularMovie, private searchService: SearchService, private router: Router) {
+  constructor(private popularMovie: PopularMovie, private searchService: SearchService, private router: Router, private dataSharingService: DataSharingService) {
   }
 
   test = new FormControl<string>('');
@@ -21,7 +22,8 @@ export class NavbarComponent implements OnInit {
   }
 
   onFormSubmitAuth() {
-    const test = this.test.value;
+    const test = this.test.value!;
+    this.dataSharingService.setTest(test);
     this.popularMovie.getSearchMovies(test ?? "", (response) => {
       this.searchService.setResults(response);
       this.router.navigate(['/search']);

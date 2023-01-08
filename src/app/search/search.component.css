@@ -1,5 +1,5 @@
 .cont{
-  padding-top: 80px;
+  padding-top: 140px;
   background-color: #161A1D;
   min-height: calc(100vh - 80px - 49px);
 }
@@ -21,4 +21,21 @@
 }
 .grid-item img{
   width: 100%;
+}
+.ratediv{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #660708;
+  width: fit-content;
+  padding: 0 40px;
+  height: 80px;
+  border-radius: 10px;
+  box-shadow: #000000 20px 20px 20px;
+  margin: 0 auto;
+}
+.ratediv h2{
+  font-weight: bold;
+  color: white;
 }

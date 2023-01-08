@@ -2,9 +2,12 @@
   <app-navbar></app-navbar>
 </header>
 <div class="cont">
+  <div class="ratediv" *ngIf="test != '' " >
+    <h2>{{test}}</h2>
+  </div>
   <div class="grid">
     <ng-container *ngFor="let movie of results.results">
-      <div class="grid-item" *ngIf="movie.poster_path">
+      <div class="grid-item" (click)="getidmovie(movie.id)" *ngIf="movie.poster_path">
         <img class="img" [src]="baseUrl + 'w300/' + movie.poster_path">
       </div>
     </ng-container>
