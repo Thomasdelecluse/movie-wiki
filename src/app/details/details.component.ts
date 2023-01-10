@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {PopularMovie} from "../../service/popularMovie.service";
+import {BASE_URL} from "../constant/components.constant";
 export interface BelongsToCollection {
   id: number;
   name: string;
@@ -65,7 +66,8 @@ export interface RootObject {
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
-  private movieDetails: RootObject|undefined = undefined;
+  baseUrl = BASE_URL;
+  movieDetails: RootObject | undefined;
   constructor(private route: ActivatedRoute, private popularMovie: PopularMovie) { }
 
   ngOnInit(): void {

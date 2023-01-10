@@ -3,6 +3,7 @@ import {SearchService} from "../../service/search.service";
 import {NavbarComponent} from "../navbar/navbar.component";
 import {DataSharingService} from "../../service/data-sharing.service";
 import {Router} from "@angular/router";
+import {BASE_URL} from "../constant/components.constant";
 
 @Component({
   selector: 'app-search',
@@ -15,7 +16,7 @@ export class SearchComponent implements AfterViewInit {
   constructor(private searchService: SearchService, private dataSharingService: DataSharingService, private router: Router) {
   }
 
-  baseUrl = 'https://image.tmdb.org/t/p/';
+  baseUrl = BASE_URL;
   ngAfterViewInit(): void {
     this.dataSharingService.getTest().subscribe((value) => {
       this.test = value;

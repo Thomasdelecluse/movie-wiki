@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {PopularMovie, RateMoviesType} from 'src/service/popularMovie.service';
+import {BASE_URL} from "../constant/components.constant";
 
 @Component({
   selector: 'app-rate',
@@ -10,7 +11,7 @@ export class RateComponent implements OnInit {
   movie: RateMoviesType = {
     results: []
   };
-  baseUrl = 'https://image.tmdb.org/t/p/';
+  baseUrl = BASE_URL;
 
   constructor(private popularMovie: PopularMovie) { }
 
