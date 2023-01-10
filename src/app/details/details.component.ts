@@ -74,6 +74,7 @@ export class DetailsComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.popularMovie.getDetailsMovies( params['id'], (response) => {
         this.movieDetails = response;
+        console.log(this.movieDetails);
       })
     });
   }

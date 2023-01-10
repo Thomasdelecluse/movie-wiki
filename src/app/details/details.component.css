@@ -1,0 +1,34 @@
+.page{
+  background-color: #161A1D;
+  padding-top: 100px;
+  padding-bottom: 120px;
+}
+.detail{
+  -webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 5px 3px rgba(0,0,0,0);
+  box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 5px 3px rgba(0,0,0,0);
+  background-color: #F5F3F4;
+  margin: 80px;
+  padding: 50px;
+    border-radius: 5px;
+}
+.detail__header{
+    display: flex;
+    margin-bottom: 20px;
+
+}
+.detail h1{
+  text-align: center;
+  padding-bottom: 30px;
+  font-size: 2.5em;
+}
+.detail__header h2{
+    margin: 0;
+    padding: 0;
+    font-size: 1.7em;
+}
+.detail__header__description{
+  padding-top: 40px;
+}
+.detail__header__image{
+  padding-right: 40px;
+}
