@@ -32,3 +32,9 @@
 .detail__header__image{
   padding-right: 40px;
 }
+.error{
+  padding-top: 40px;
+}
+.error h2{
+  font-size: 1.7em;
+}

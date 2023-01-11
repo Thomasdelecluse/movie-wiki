@@ -4,12 +4,12 @@
     <h1>{{movieDetails?.title}}</h1>
     <div class="detail__header">
       <div class="detail__header__image">
-        <img [src]="baseUrl + 'w400/' + movieDetails?.poster_path" alt="La photo ne charge pas " >
+        <img [src]="baseUrl + 'w400/' + movieDetails?.poster_path" alt="Ce film ne contient pas d'image' " >
       </div>
       <div class="detail__header__description">
         <h2 >{{movieDetails?.overview}}</h2>
       </div>
-      <div *ngIf="movieDetails?.overview == '' ">
+      <div class="error"  *ngIf="movieDetails?.overview == '' ">
         <h2>Ce film ne contient pas de description</h2>
       </div>
 
