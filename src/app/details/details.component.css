@@ -3,6 +3,7 @@
   padding-top: 100px;
   padding-bottom: 120px;
 }
+
 .detail{
   -webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 5px 3px rgba(0,0,0,0);
   box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 5px 3px rgba(0,0,0,0);
@@ -10,11 +11,15 @@
   margin: 80px;
   padding: 50px;
     border-radius: 5px;
+
 }
 .detail__header{
     display: flex;
     margin-bottom: 20px;
 
+}
+label{
+  font-size: 2em;
 }
 .detail h1{
   text-align: center;
@@ -24,7 +29,7 @@
 .detail__header h2{
     margin: 0;
     padding: 0;
-    font-size: 1.7em;
+    font-size: 1.2em;
 }
 .detail__header__description{
   padding-top: 40px;
