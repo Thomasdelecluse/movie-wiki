@@ -1,35 +1,38 @@
 <app-navbar></app-navbar>
 <div class="page">
-  <div class="detail">
+
+  <div class="detail"
+       [style.background-image]="'url('+baseUrl + 'original/' + movieDetails?.backdrop_path+')'"
+       [style.background-size]="'cover'">
     <div *ngIf="type == 'movie' ">
       <p class="title"><strong>{{movieDetails?.title}}</strong> ({{yearMovieDetails}})</p>
-      <h1 class="tagline">{{movieDetails?.tagline}}</h1>
-    <div class="detail__header">
-      <div class="detail__header__image">
-        <img [src]="baseUrl + 'w400/' + movieDetails?.poster_path" alt="Ce film ne contient pas d'image' " >
-      </div>
-      <div class="detail__header__description">
-        <label for="description">Synopsis</label>
-        <p id="description" >{{movieDetails?.overview}}</p>
-        <p>{{genreMovieDetails}}</p>
-      </div>
-      <div class="error"  *ngIf="movieDetails?.overview == '' ">
-        <h2>Ce film ne contient pas de description</h2>
-      </div>
+      <div class="detail__header">
+        <div class="detail__header__image">
+          <img [src]="baseUrl + 'w400/' + movieDetails?.poster_path" alt="Ce film ne contient pas d'image' ">
+        </div>
+        <div class="detail__header__description">
+          <h1 class="tagline">{{movieDetails?.tagline}}</h1>
+          <h1 class="genre"><strong>{{movieDetails?.release_date}} {{genreMovieDetails}}</strong></h1>
+          <label for="description"><strong>Synopsis</strong></label>
+          <p id="description">{{movieDetails?.overview}}</p>
+        </div>
+        <div class="error" *ngIf="movieDetails?.overview == '' ">
+          <h2>Ce film ne contient pas de description</h2>
+        </div>
 
+      </div>
     </div>
-  </div>
     <div *ngIf="type == 'tv' ">
       <h1>{{tvDetails?.name}}</h1>
 
       <div class="detail__header">
         <div class="detail__header__image">
-          <img [src]="baseUrl + 'w400/' + tvDetails?.poster_path" alt="Ce film ne contient pas d'image' " >
+          <img [src]="baseUrl + 'w400/' + tvDetails?.poster_path" alt="Ce film ne contient pas d'image' ">
         </div>
         <div class="detail__header__description">
-          <h2 >{{tvDetails?.overview}}</h2>
+          <h2>{{tvDetails?.overview}}</h2>
         </div>
-        <div class="error"  *ngIf="tvDetails?.overview == '' ">
+        <div class="error" *ngIf="tvDetails?.overview == '' ">
           <h2>Ce film ne contient pas de description</h2>
         </div>
 

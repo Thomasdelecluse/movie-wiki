@@ -10,7 +10,7 @@
   background-color: #F5F3F4;
   margin: 80px;
   padding: 50px;
-    border-radius: 5px;
+  border-radius: 5px;
 
 }
 .detail__header{
@@ -19,8 +19,9 @@
 
 }
 label{
-  font-size: 2em;
+  font-size: 1.7em;
   padding-bottom: 20px;
+  padding-top: 20px;
 }
 .title{
   text-align: center;
@@ -44,8 +45,11 @@ label{
 .error h2{
   font-size: 1.7em;
 }
+.genre{
+  font-size: 1rem;
+}
 .tagline{
-  text-align: center;
   font-size: 1.7em;
-  padding-top: 20px;
+  padding-bottom: 10px;
+
 }
