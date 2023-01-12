@@ -62,8 +62,14 @@ export class PopularMovie {
     const url = `${this.root}/search/multi?api_key=${this.apiKey}&language=${this.language}&query=${request}`;
     return this.http.get(url).subscribe(callable);
   }
+
   getDetailsMovies(id: number,callable: (popularMovies: any) => void) {
     const url = `${this.root}/movie/${id}?api_key=${this.apiKey}&language=${this.language}`;
+    return this.http.get(url).subscribe(callable);
+  }
+
+  getDetailsTV(id: number,callable: (popularMovies: any) => void) {
+    const url = `${this.root}/tv/${id}?api_key=${this.apiKey}&language=${this.language}`;
     return this.http.get(url).subscribe(callable);
   }
 

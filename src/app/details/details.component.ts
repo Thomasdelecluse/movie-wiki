@@ -33,6 +33,7 @@ export interface SpokenLanguage {
 }
 
 export interface RootObject {
+  name: any;
   adult: boolean;
   backdrop_path: string;
   belongs_to_collection: BelongsToCollection;
@@ -67,16 +68,24 @@ export interface RootObject {
 })
 export class DetailsComponent implements OnInit {
   baseUrl = BASE_URL;
+  type = this.route.snapshot.paramMap.get('type');
   movieDetails: RootObject | undefined;
+  tvDetails: RootObject | undefined;
   constructor(private route: ActivatedRoute, private popularMovie: PopularMovie) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.popularMovie.getDetailsMovies( params['id'], (response) => {
-        this.movieDetails = response;
-        console.log(this.movieDetails);
-      })
-    });
+      if( params['type'] === 'movie') {
+        this.popularMovie.getDetailsMovies( params['id'], (response) => {
+          this.movieDetails = response;
+          console.log(this.movieDetails);
+        })
+      } else {
+        this.popularMovie.getDetailsTV( params['id'], (response) => {
+          this.tvDetails = response;
+          console.log(this.tvDetails);
+        })
+      }
+      });
   }
-
 }

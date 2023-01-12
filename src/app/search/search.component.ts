@@ -26,8 +26,14 @@ export class SearchComponent implements AfterViewInit {
 
     })
   }
-  getidmovie(id: number) {
-    this.router.navigate(['/details', id]);
+  getTypeAndId(movie: any) {
+    this.router.navigate(['/details', movie.id, movie.media_type])
+      .then(() => {
+        console.log('Navigation successful!');
+      })
+      .catch(error => {
+        console.log('Navigation failed: ' + error);
+      });
   }
 
 }

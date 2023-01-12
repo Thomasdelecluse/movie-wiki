@@ -7,7 +7,7 @@
   </div>
   <div class="grid">
     <ng-container *ngFor="let movie of results.results">
-      <div class="grid-item" (click)="getidmovie(movie.id)" *ngIf="movie.poster_path">
+      <div class="grid-item" (click)="getTypeAndId(movie)" *ngIf="movie.poster_path">
         <img class="img" [src]="baseUrl + 'w300/' + movie.poster_path">
       </div>
     </ng-container>
