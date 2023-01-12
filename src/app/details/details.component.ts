@@ -71,6 +71,9 @@ export class DetailsComponent implements OnInit {
   type = this.route.snapshot.paramMap.get('type');
   movieDetails: RootObject | undefined;
   tvDetails: RootObject | undefined;
+  yearMovieDetails: string | undefined;
+  genreMovieDetails: string | undefined;
+
   constructor(private route: ActivatedRoute, private popularMovie: PopularMovie) { }
 
   ngOnInit(): void {
@@ -78,11 +81,14 @@ export class DetailsComponent implements OnInit {
       if( params['type'] === 'movie') {
         this.popularMovie.getDetailsMovies( params['id'], (response) => {
           this.movieDetails = response;
+          this.yearMovieDetails = this.movieDetails?.release_date.substring(0, 4);
+          this.genreMovieDetails = this.movieDetails?.genres.map((genre) => genre.name).join(', ');
           console.log(this.movieDetails);
         })
       } else {
         this.popularMovie.getDetailsTV( params['id'], (response) => {
           this.tvDetails = response;
+
           console.log(this.tvDetails);
         })
       }

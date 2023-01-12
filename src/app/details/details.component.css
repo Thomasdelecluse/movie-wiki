@@ -20,10 +20,11 @@
 }
 label{
   font-size: 2em;
+  padding-bottom: 20px;
 }
-.detail h1{
+.title{
   text-align: center;
-  padding-bottom: 30px;
+  padding-bottom: 15px;
   font-size: 2.5em;
 }
 .detail__header h2{
@@ -42,4 +43,9 @@ label{
 }
 .error h2{
   font-size: 1.7em;
+}
+.tagline{
+  text-align: center;
+  font-size: 1.7em;
+  padding-top: 20px;
 }
