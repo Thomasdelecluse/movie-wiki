@@ -50,8 +50,9 @@
           <label for="description_tv"><strong>Synopsis</strong></label>
           <p id="description_tv">{{tvDetails?.overview}}</p>
           <div class="error" *ngIf="tvDetails?.overview == '' ">
-            <h2>Ce film ne contient pas de description</h2>
+            <h2>Cette serie ne contient pas de description</h2>
           </div>
+          <button class="btn-contact"><a href="{{tvDetails?.homepage}}" class="button">Regarder la serie</a></button>
         </div>
 
       </div>
