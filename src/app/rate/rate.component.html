@@ -5,7 +5,7 @@
   </div>
   <div class="grid">
     <div class="grid-item" *ngFor="let movie of movie.results" >
-      <img class="img" [src]="baseUrl + 'w300/' + movie.poster_path">
+      <img class="img" (click)="getTypeAndId(movie)" [src]="baseUrl + 'w300/' + movie.poster_path">
     </div>
   </div>
 </div>
