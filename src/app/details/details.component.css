@@ -5,6 +5,7 @@
 }
 p{
   color: white;
+  font-weight: 500;
 }
 h1 {
   color: white;
@@ -47,11 +48,8 @@ label{
 .detail__header__image{
   padding-right: 40px;
 }
-.error{
-  padding-top: 40px;
-}
-.error h2{
-  font-size: 1.7em;
+.error p{
+  font-weight: 500;
 }
 .genre{
   font-size: 1rem;

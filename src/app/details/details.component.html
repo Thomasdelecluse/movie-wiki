@@ -1,41 +1,60 @@
 <app-navbar></app-navbar>
 <div class="page">
-  <p class="title"><strong>{{movieDetails?.title}}</strong> ({{yearMovieDetails}})</p>
-  <div class="detail"
-       [style.background-image]="'url('+baseUrl + 'original/' + movieDetails?.backdrop_path+')'"
+  <div *ngIf="type == 'movie' ">
+    <p class="title"><strong>{{movieDetails?.title}}</strong> ({{yearMovieDetails}})</p>
+  </div>
+  <div *ngIf="type == 'tv' ">
+    <p class="title"><strong>{{tvDetails?.name}}</strong> ({{yearTvDetails}})</p>
+  </div>
+
+  <div class="detail" *ngIf="type == 'movie' "
+       [style.background]="'linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url('+baseUrl + 'original/' + movieDetails?.backdrop_path+') center/cover'"
        [style.background-size]="'cover'">
-      <div *ngIf="type == 'movie' ">
-        <div class="detail__header">
-          <div class="detail__header__image">
-            <img [src]="baseUrl + 'w400/' + movieDetails?.poster_path" alt="Ce film ne contient pas d'image' ">
+    <div *ngIf="type == 'movie' ">
+      <div class="detail__header">
+        <div class="detail__header__image">
+          <img [src]="baseUrl + 'w400/' + movieDetails?.poster_path" alt="Ce film ne contient pas d'image' ">
+        </div>
+        <div class="detail__header__description">
+          <h1 class="tagline">{{movieDetails?.tagline}}</h1>
+          <h1 class="genre"><strong>{{movieDetails?.release_date}} {{genreMovieDetails}}</strong></h1>
+          <div>
+            <img *ngFor="let _ of rateMovieDetails" src="/assets/img/etoile.png" width="15" height="15" alt="">
+            <img *ngFor="let _ of negativeRateMovieDetails" [style.filter]="'saturate(0)'" src="/assets/img/etoile.png"
+                 width="15" height="15" alt="">
           </div>
-          <div class="detail__header__description">
-            <h1 class="tagline">{{movieDetails?.tagline}}</h1>
-            <h1 class="genre"><strong>{{movieDetails?.release_date}} {{genreMovieDetails}}</strong></h1>
-            <label for="description"><strong>Synopsis</strong></label>
-            <p id="description">{{movieDetails?.overview}}</p>
-          </div>
+          <label for="description_movie"><strong>Synopsis</strong></label>
+          <p id="description_movie">{{movieDetails?.overview}}</p>
           <div class="error" *ngIf="movieDetails?.overview == '' ">
-            <h2>Ce film ne contient pas de description</h2>
+            <p>Ce film ne contient pas de description</p>
           </div>
         </div>
       </div>
-    <div *ngIf="type == 'tv' ">
-      <h1>{{tvDetails?.name}}</h1>
-
+    </div>
+  </div>
+  <div class="detail" *ngIf="type == 'tv' "
+    [style.background]="'linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url('+baseUrl + 'original/' + tvDetails?.backdrop_path+') center/cover'"
+    [style.background-size]="'cover'">
       <div class="detail__header">
         <div class="detail__header__image">
           <img [src]="baseUrl + 'w400/' + tvDetails?.poster_path" alt="Ce film ne contient pas d'image' ">
         </div>
         <div class="detail__header__description">
-          <h2>{{tvDetails?.overview}}</h2>
-        </div>
-        <div class="error" *ngIf="tvDetails?.overview == '' ">
-          <h2>Ce film ne contient pas de description</h2>
+          <h1 class="tagline">{{tvDetails?.tagline}}</h1>
+          <h1 class="genre"><strong>{{tvDetails?.first_air_date}} {{genreTvDetails}}</strong></h1>
+          <div>
+            <img *ngFor="let _ of rateTVDetails" src="/assets/img/etoile.png" width="15" height="15" alt="">
+            <img *ngFor="let _ of negativeRateMovieDetails" [style.filter]="'saturate(0)'" src="/assets/img/etoile.png"
+                 width="15" height="15" alt="">
+          </div>
+          <label for="description_tv"><strong>Synopsis</strong></label>
+          <p id="description_tv">{{tvDetails?.overview}}</p>
+          <div class="error" *ngIf="tvDetails?.overview == '' ">
+            <h2>Ce film ne contient pas de description</h2>
+          </div>
         </div>
 
       </div>
-    </div>
   </div>
 </div>
 <app-footer></app-footer>

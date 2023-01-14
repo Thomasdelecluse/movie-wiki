@@ -59,6 +59,7 @@ export interface RootObject {
   video: boolean;
   vote_average: number;
   vote_count: number;
+  first_air_date: string;
 }
 
 @Component({
@@ -73,6 +74,11 @@ export class DetailsComponent implements OnInit {
   tvDetails: RootObject | undefined;
   yearMovieDetails: string | undefined;
   genreMovieDetails: string | undefined;
+  rateMovieDetails: number[] | undefined;
+  negativeRateMovieDetails: number[] | undefined;
+  yearTvDetails: string | undefined;
+  genreTvDetails: string | undefined;
+  rateTVDetails: number[] | undefined;
 
   constructor(private route: ActivatedRoute, private popularMovie: PopularMovie) {
     console.log('cc');
@@ -86,12 +92,17 @@ export class DetailsComponent implements OnInit {
           this.movieDetails = response;
           this.yearMovieDetails = this.movieDetails?.release_date.substring(0, 4);
           this.genreMovieDetails = this.movieDetails?.genres.map((genre) => "• " + genre.name).join("  ");
+          this.rateMovieDetails = new Array(Math.ceil(Math.floor(this.movieDetails?.vote_average ?? 0)/2)).fill(0);
+          this.negativeRateMovieDetails = new Array(5 - this.rateMovieDetails.length).fill(0);
           console.log(this.movieDetails);
         })
       } else {
         this.popularMovie.getDetailsTV( params['id'], (response) => {
           this.tvDetails = response;
-
+          this.yearTvDetails = this.tvDetails?.first_air_date.substring(0, 4);
+          this.genreTvDetails = this.tvDetails?.genres.map((genre) => "• " + genre.name).join("  ");
+          this.rateTVDetails = new Array(Math.ceil(Math.floor(this.tvDetails?.vote_average ?? 0)/2)).fill(0);
+          this.negativeRateMovieDetails = new Array(5 - this.rateTVDetails.length).fill(0);
           console.log(this.tvDetails);
         })
       }
