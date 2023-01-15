@@ -25,6 +25,16 @@
           </div>
           <label for="description_movie"><strong>Synopsis</strong></label>
           <p id="description_movie">{{movieDetails?.overview}}</p>
+          <div class="budget">
+            <div class="b_budget">
+              <label for="budget_movie"><strong>Budget</strong></label>
+              <p id="budget_movie">{{movieDetails?.budget}} €</p>
+            </div>
+            <div class="b_budget">
+              <label for="revenue_movie"><strong>Revenue</strong></label>
+              <p id="revenue_movie">{{movieDetails?.revenue}} €</p>
+            </div>
+          </div>
           <div class="error" *ngIf="movieDetails?.overview == '' ">
             <p>Ce film ne contient pas de description</p>
           </div>
