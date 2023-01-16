@@ -28,11 +28,11 @@
           <div class="budget">
             <div class="b_budget">
               <label for="budget_movie"><strong>Budget</strong></label>
-              <p id="budget_movie">{{movieDetails?.budget}} €</p>
+              <p id="budget_movie">{{ budget }}</p>
             </div>
             <div class="b_budget">
-              <label for="revenue_movie"><strong>Revenue</strong></label>
-              <p id="revenue_movie">{{movieDetails?.revenue}} €</p>
+              <label for="revenue_movie"><strong>Revenu</strong></label>
+              <p id="revenue_movie">{{revenu}}</p>
             </div>
           </div>
           <div class="error" *ngIf="movieDetails?.overview == '' ">
@@ -68,5 +68,6 @@
       </div>
   </div>
 </div>
+<app-detail-slider [items]="actors"></app-detail-slider>
 <app-footer></app-footer>
 

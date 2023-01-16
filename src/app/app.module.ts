@@ -12,8 +12,10 @@ import {HomeComponent} from './home/home.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {PopularComponent} from "./popular/popular.component";
-import { SearchComponent } from './search/search.component';
-import { DetailsComponent } from './details/details.component';
+import {SearchComponent} from './search/search.component';
+import {DetailsComponent} from './details/details.component';
+import {ItemComponent} from "./details/slider/item.component";
+import {SliderComponent} from "./details/slider/slider.component";
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { DetailsComponent } from './details/details.component';
     LoginComponent,
     HomeComponent,
     SearchComponent,
+    SliderComponent,
+    ItemComponent,
     DetailsComponent,
   ],
   imports: [

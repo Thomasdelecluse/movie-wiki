@@ -79,6 +79,22 @@ export class DetailsComponent implements OnInit {
   yearTvDetails: string | undefined;
   genreTvDetails: string | undefined;
   rateTVDetails: number[] | undefined;
+  budget: string | undefined;
+  revenu: string | undefined;
+
+  actors: any[] = [
+    'John',
+    'Doe','John',
+    'Doe','John',
+    'Doe','John',
+    'Doe','John',
+    'Doe','John',
+    'Doe','John',
+    'Doe','John',
+    'Doe','John',
+    'Doe','John',
+    'Doe',
+  ]
 
   constructor(private route: ActivatedRoute, private popularMovie: PopularMovie) {
     console.log('cc');
@@ -94,6 +110,8 @@ export class DetailsComponent implements OnInit {
           this.genreMovieDetails = this.movieDetails?.genres.map((genre) => "• " + genre.name).join("  ");
           this.rateMovieDetails = new Array(Math.ceil(Math.floor(this.movieDetails?.vote_average ?? 0)/2)).fill(0);
           this.negativeRateMovieDetails = new Array(5 - this.rateMovieDetails.length).fill(0);
+          this.budget = new Intl.NumberFormat('fr', { style: 'currency',notation: 'compact', currency: 'EUR' }).format(this.movieDetails?.budget ?? 0);
+          this.revenu = new Intl.NumberFormat('fr', { style: 'currency',notation: 'compact', currency: 'EUR' }).format(this.movieDetails?.revenue ?? 0);
           console.log(this.movieDetails);
         })
       } else {
