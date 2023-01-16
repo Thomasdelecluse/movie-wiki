@@ -13,16 +13,22 @@ export class RateComponent implements OnInit {
     results: []
   };
   baseUrl = BASE_URL;
+  dayOrWeek: string = "day";
 
   constructor(private popularMovie: PopularMovie, private router: Router) { }
 
 
   ngOnInit(): void {
-    this.popularMovie.getTopRateMovies(popularMovies => {
+    this.popularMovie.getTopRateMovies(this.dayOrWeek ,popularMovies => {
       this.movie = popularMovies;
     })
   }
-
+  getDayOrWeek(dayOrWeek: string){
+    this.dayOrWeek = dayOrWeek;
+    this.popularMovie.getTopRateMovies(this.dayOrWeek ,popularMovies => {
+      this.movie = popularMovies;
+    })
+  }
   getTypeAndId(movie: any) {
     this.router.navigate(['/details', movie.id, movie.media_type])
       .then(() => {

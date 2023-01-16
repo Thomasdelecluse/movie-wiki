@@ -53,8 +53,8 @@ export class PopularMovie {
     return this.http.get<PopularMoviesType>(url).subscribe(callable);
   }
 
-  getTopRateMovies(callable: (popularMovies: RateMoviesType) => void) {
-    const url = `${this.root}/trending/all/day?api_key=${this.apiKey}&language=${this.language}`;
+  getTopRateMovies(dayOrWeek: string, callable: (popularMovies: RateMoviesType) => void) {
+    const url = `${this.root}/trending/all/${dayOrWeek}?api_key=${this.apiKey}&language=${this.language}`;
     return this.http.get<RateMoviesType>(url).subscribe(callable);
   }
 

@@ -1,7 +1,15 @@
 
 <div id="rate" class="rate">
+  <div class="container">
   <div class="ratediv">
     <h2>Les tendances de la semaine</h2>
+  </div>
+  <div class="container-radio">
+    <div class="radio">
+      <input label="Jour" (click)="getDayOrWeek('day')" type="radio"  name="gender" checked>
+      <input label="Semaine" (click)="getDayOrWeek('week')" type="radio"  name="gender" >
+    </div>
+  </div>
   </div>
   <div class="grid">
     <div class="grid-item" *ngFor="let movie of movie.results" >
