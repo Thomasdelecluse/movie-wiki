@@ -1,4 +1,5 @@
 import {Component, Input} from "@angular/core";
+import {Cast} from "../details.component";
 
 @Component({
   selector: 'app-detail-slider',
@@ -7,6 +8,6 @@ import {Component, Input} from "@angular/core";
 })
 export class SliderComponent {
 
-  @Input() items: any[] = [];
+  @Input() items: Cast[] | undefined;
 
 }

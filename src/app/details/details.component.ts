@@ -61,7 +61,40 @@ export interface RootObject {
   vote_count: number;
   first_air_date: string;
 }
+export interface Cast {
+  adult: boolean;
+  gender: number;
+  id: number;
+  known_for_department: string;
+  name: string;
+  original_name: string;
+  popularity: number;
+  profile_path: string;
+  cast_id: number;
+  character: string;
+  credit_id: string;
+  order: number;
+}
 
+export interface Crew {
+  adult: boolean;
+  gender: number;
+  id: number;
+  known_for_department: string;
+  name: string;
+  original_name: string;
+  popularity: number;
+  profile_path: string;
+  credit_id: string;
+  department: string;
+  job: string;
+}
+
+export interface Actors {
+  id: number;
+  cast: Cast[];
+  crew: Crew[];
+}
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
@@ -82,19 +115,7 @@ export class DetailsComponent implements OnInit {
   budget: string | undefined;
   revenu: string | undefined;
 
-  actors: any[] = [
-    'John',
-    'Doe','John',
-    'Doe','John',
-    'Doe','John',
-    'Doe','John',
-    'Doe','John',
-    'Doe','John',
-    'Doe','John',
-    'Doe','John',
-    'Doe','John',
-    'Doe',
-  ]
+  actors: Actors | undefined;
 
   constructor(private route: ActivatedRoute, private popularMovie: PopularMovie) {
     console.log('cc');
@@ -114,6 +135,10 @@ export class DetailsComponent implements OnInit {
           this.revenu = new Intl.NumberFormat('fr', { style: 'currency',notation: 'compact', currency: 'EUR' }).format(this.movieDetails?.revenue ?? 0);
           console.log(this.movieDetails);
         })
+        this.popularMovie.getDetailsActor( params['id'], (response) => {
+          this.actors = response;
+          console.log(this.actors);
+        });
       } else {
         this.popularMovie.getDetailsTV( params['id'], (response) => {
           this.tvDetails = response;

@@ -38,6 +38,7 @@
           <div class="error" *ngIf="movieDetails?.overview == '' ">
             <p>Ce film ne contient pas de description</p>
           </div>
+
         </div>
       </div>
     </div>
@@ -64,10 +65,9 @@
           </div>
           <button class="btn-contact"><a href="{{tvDetails?.homepage}}" class="button">Regarder la serie</a></button>
         </div>
-
       </div>
-  </div>
+    </div>
 </div>
-<app-detail-slider [items]="actors"></app-detail-slider>
+<app-detail-slider [items]="actors?.cast"></app-detail-slider>
 <app-footer></app-footer>
 
