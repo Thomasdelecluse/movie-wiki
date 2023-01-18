@@ -12,6 +12,7 @@
 
   height: 70px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  z-index: 100;
 }
 .navbar-nav{
   justify-content: right;
