@@ -3,6 +3,9 @@
   overflow-x: scroll;
   padding: 10px 20px;
   gap: 20px;
+  background-color: transparent;
+  overflow-y: hidden;
+  margin-left: 40px;
 }
 
 .slider::-webkit-scrollbar {

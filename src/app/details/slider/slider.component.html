@@ -1,3 +1,5 @@
 <div class="slider">
-  <app-detail-slider-item [item]="item" *ngFor="let item of items" ></app-detail-slider-item>
+  <ng-container *ngFor=" let item of items">
+    <app-detail-slider-item [item]="item" *ngIf="item.profile_path" ></app-detail-slider-item>
+  </ng-container>
 </div>

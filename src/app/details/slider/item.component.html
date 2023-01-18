@@ -1,3 +1,7 @@
 <div class="card">
-  <h1>{{ item?.name }}</h1>
+  <img class="img" [src]="baseUrl + 'w200/' + item?.profile_path" alt="Ce film ne contient pas d'image' ">
+  <div class="container">
+    <p class="name">{{item?.name}}</p>
+    <p class="character">{{formatName(item?.character)}}</p>
+  </div>
 </div>
