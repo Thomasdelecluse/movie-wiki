@@ -73,8 +73,13 @@ export class PopularMovie {
     return this.http.get(url).subscribe(callable);
   }
 
-  getDetailsActor(id: number,callable: (popularMovies: any) => void) {
+  getDetailsActorMovie(id: number, callable: (popularMovies: any) => void) {
     const url = `${this.root}/movie/${id}/credits?api_key=${this.apiKey}&language=${this.language}`;
     return this.http.get(url).subscribe(callable);
+  }
+
+  getDetailsActorTv(id: number, callable: (popularMovies: any) => void) {
+  const url = `${this.root}/tv/${id}/credits?api_key=${this.apiKey}&language=${this.language}`;
+  return this.http.get(url).subscribe(callable);
   }
 }

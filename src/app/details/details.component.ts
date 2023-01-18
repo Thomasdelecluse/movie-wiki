@@ -164,7 +164,7 @@ export class DetailsComponent implements OnInit {
           }
           console.log(this.movieDetails);
         })
-        this.popularMovie.getDetailsActor( params['id'], (response) => {
+        this.popularMovie.getDetailsActorMovie( params['id'], (response) => {
           this.actors = response;
           console.log(this.actors);
         });
@@ -177,6 +177,10 @@ export class DetailsComponent implements OnInit {
           this.negativeRateMovieDetails = new Array(5 - this.rateTVDetails.length).fill(0);
           this.seasonNumber = this.tvDetails?.last_episode_to_air.season_number;
           this.episodeNumber = this.tvDetails?.last_episode_to_air.episode_number;
+          this.popularMovie.getDetailsActorTv( params['id'], (response) => {
+            this.actors = response;
+            console.log(this.actors);
+          });
           if (this.episodeNumber && this.episodeNumber > 1) {
             this.episode_text = "episodes";
           }
