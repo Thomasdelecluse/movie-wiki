@@ -25,9 +25,10 @@ label {
   text-decoration: none;
 }
 .detail{
-  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
   background-color: #F5F3F4;
   padding: 50px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 
 }
 .detail__header{
@@ -85,9 +86,41 @@ label{
 .btn-contact:active {
   box-shadow: inset 0 5px 30px rgba(0, 0, 0, 0.5);
 }
+/*budget et revenus du film*/
 .budget{
   display: flex;
 }
 .b_budget{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding-right: 60px;
+}
+.label-budget{
+  padding-bottom: 0;
+}
+/*nombre de saisons et episodes css*/
+.saison{
+  display: flex;
+}
+.s_saison{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 60px;
+}
+.saison_text {
+  font-size: 1.4em;
+}
+.label-saison{
+  padding-bottom: 0;
+}
+/*slider-css*/
+
+.title_slider{
+  padding-top: 40px;
+  padding-left: 40px;
+  font-size: 2.3em;
+  color: black;
+  font-weight: 500;
 }

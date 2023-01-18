@@ -31,11 +31,25 @@ export interface SpokenLanguage {
   iso_639_1: string;
   name: string;
 }
+export interface LastEpisode {
+  air_date: string;
+  episode_number: number;
+  id: number;
+  name: string;
+  overview: string;
+  production_code: string;
+  season_number: number;
+  show_id: number;
+  still_path: string;
+  vote_average: number;
+  vote_count: number;
+}
 
 export interface RootObject {
   name: any;
   adult: boolean;
   backdrop_path: string;
+  last_episode_to_air: LastEpisode;
   belongs_to_collection: BelongsToCollection;
   budget: number;
   genres: Genre[];
@@ -103,19 +117,29 @@ export interface Actors {
 export class DetailsComponent implements OnInit {
   baseUrl = BASE_URL;
   type = this.route.snapshot.paramMap.get('type');
+  // variable movie
   movieDetails: RootObject | undefined;
-  tvDetails: RootObject | undefined;
   yearMovieDetails: string | undefined;
   genreMovieDetails: string | undefined;
   rateMovieDetails: number[] | undefined;
   negativeRateMovieDetails: number[] | undefined;
   yearTvDetails: string | undefined;
-  genreTvDetails: string | undefined;
-  rateTVDetails: number[] | undefined;
   budget: string | undefined;
   revenu: string | undefined;
-
+  movieTime: string | undefined;
   actors: Actors | undefined;
+
+  // variable tv
+  tvDetails: RootObject | undefined;
+  seasonNumber: number | undefined;
+  episodeNumber: number | undefined;
+  episode_text: string| undefined;
+  season_text: string | undefined;
+  genreTvDetails: string | undefined;
+  rateTVDetails: number[] | undefined;
+
+
+
 
   constructor(private route: ActivatedRoute, private popularMovie: PopularMovie) {
     console.log('cc');
@@ -133,6 +157,11 @@ export class DetailsComponent implements OnInit {
           this.negativeRateMovieDetails = new Array(5 - this.rateMovieDetails.length).fill(0);
           this.budget = new Intl.NumberFormat('fr', { style: 'currency',notation: 'compact', currency: 'EUR' }).format(this.movieDetails?.budget ?? 0);
           this.revenu = new Intl.NumberFormat('fr', { style: 'currency',notation: 'compact', currency: 'EUR' }).format(this.movieDetails?.revenue ?? 0);
+          if (this.movieDetails?.runtime !== undefined) {
+            let hours = Math.floor(this.movieDetails.runtime / 60);
+            let minutes = this.movieDetails.runtime % 60;
+            this.movieTime = hours + "h" + minutes;
+          }
           console.log(this.movieDetails);
         })
         this.popularMovie.getDetailsActor( params['id'], (response) => {
@@ -146,6 +175,22 @@ export class DetailsComponent implements OnInit {
           this.genreTvDetails = this.tvDetails?.genres.map((genre) => "• " + genre.name).join("  ");
           this.rateTVDetails = new Array(Math.ceil(Math.floor(this.tvDetails?.vote_average ?? 0)/2)).fill(0);
           this.negativeRateMovieDetails = new Array(5 - this.rateTVDetails.length).fill(0);
+          this.seasonNumber = this.tvDetails?.last_episode_to_air.season_number;
+          this.episodeNumber = this.tvDetails?.last_episode_to_air.episode_number;
+          if (this.episodeNumber && this.episodeNumber > 1) {
+            this.episode_text = "episodes";
+          }
+          else
+          {
+            this.episode_text = "episode";
+          }
+          if (this.seasonNumber && this.seasonNumber > 1) {
+            this.season_text = "saisons";
+          }
+          else
+          {
+            this.season_text = "saison";
+          }
           console.log(this.tvDetails);
         })
       }

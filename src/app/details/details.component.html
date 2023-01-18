@@ -17,7 +17,7 @@
         </div>
         <div class="detail__header__description">
           <h1 class="tagline">{{movieDetails?.tagline}}</h1>
-          <h1 class="genre"><strong>{{movieDetails?.release_date}} {{genreMovieDetails}}</strong></h1>
+          <h1 class="genre"><strong>{{movieDetails?.release_date}} {{genreMovieDetails}} • {{movieTime}}</strong></h1>
           <div>
             <img *ngFor="let _ of rateMovieDetails" src="/assets/img/etoile.png" width="15" height="15" alt="">
             <img *ngFor="let _ of negativeRateMovieDetails" [style.filter]="'saturate(0)'" src="/assets/img/etoile.png"
@@ -27,18 +27,17 @@
           <p id="description_movie">{{movieDetails?.overview}}</p>
           <div class="budget">
             <div class="b_budget">
-              <label for="budget_movie"><strong>Budget</strong></label>
+              <label class="label-budget" for="budget_movie"><strong>Budget</strong></label>
               <p id="budget_movie">{{ budget }}</p>
             </div>
             <div class="b_budget">
-              <label for="revenue_movie"><strong>Revenu</strong></label>
+              <label class="label-budget" for="revenue_movie"><strong>Revenu</strong></label>
               <p id="revenue_movie">{{revenu}}</p>
             </div>
           </div>
           <div class="error" *ngIf="movieDetails?.overview == '' ">
             <p>Ce film ne contient pas de description</p>
           </div>
-
         </div>
       </div>
     </div>
@@ -63,11 +62,26 @@
           <div class="error" *ngIf="tvDetails?.overview == '' ">
             <h2>Cette serie ne contient pas de description</h2>
           </div>
+          <div class="saison">
+            <div class="s_saison">
+              <label class="label-saison" for="saison"><strong>{{season_text}}</strong></label>
+              <p class="saison_text" id="saison">{{ seasonNumber }}</p>
+            </div>
+            <div class="s_saison">
+              <label class="label-saison" for="episode"><strong>{{episode_text}}</strong></label>
+              <p class="saison_text" id="episode">{{ episodeNumber }}</p>
+            </div>
+          </div>
           <button class="btn-contact"><a href="{{tvDetails?.homepage}}" class="button">Regarder la serie</a></button>
         </div>
       </div>
     </div>
+  <div class="bas-page">
+    <h1 class="title_slider">Têtes d'affiche :</h1>
+    <app-detail-slider class="slider" [items]="actors?.cast"></app-detail-slider>
+  </div>
+
 </div>
-<app-detail-slider [items]="actors?.cast"></app-detail-slider>
+
 <app-footer></app-footer>
 
