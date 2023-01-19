@@ -16,9 +16,14 @@ import {SearchComponent} from './search/search.component';
 import {DetailsComponent} from './details/details.component';
 import {ItemComponent} from "./details/slider/item.component";
 import {SliderComponent} from "./details/slider/slider.component";
+import {SafePipe} from "./safe-pipe";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from "@angular/material/button";
+import { ModalComponent } from './details/dialog/modal/modal.component';
 
 @NgModule({
   declarations: [
+    SafePipe,
     AppComponent,
     NavbarComponent,
     ButtonComponent,
@@ -31,15 +36,18 @@ import {SliderComponent} from "./details/slider/slider.component";
     SliderComponent,
     ItemComponent,
     DetailsComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {
 }
