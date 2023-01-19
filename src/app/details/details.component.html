@@ -1,5 +1,6 @@
 <app-navbar></app-navbar>
 <div class="page">
+
   <div *ngIf="type == 'movie' ">
     <p class="title"><strong>{{movieDetails?.title}}</strong> ({{yearMovieDetails}})</p>
   </div>
@@ -17,12 +18,14 @@
         </div>
         <div class="detail__header__description">
           <h1 class="tagline">{{movieDetails?.tagline}}</h1>
-          <h1 class="genre"><strong>{{movieDetails?.release_date}} {{genreMovieDetails}} • {{movieTime}}</strong></h1>
+          <h1 class="genre"><strong>{{movieDetails?.release_date}} {{genreMovieDetails}} • {{movieTime}} </strong></h1>
           <div>
             <img *ngFor="let _ of rateMovieDetails" src="/assets/img/etoile.png" width="15" height="15" alt="">
             <img *ngFor="let _ of negativeRateMovieDetails" [style.filter]="'saturate(0)'" src="/assets/img/etoile.png"
                  width="15" height="15" alt="">
+            <button class="btn-trailer" mat-raised-button (click)="openDialog()"> Bande annonce</button>
           </div>
+
           <label for="description_movie"><strong>Synopsis</strong></label>
           <p id="description_movie">{{movieDetails?.overview}}</p>
           <div class="budget">
@@ -85,3 +88,5 @@
 
 <app-footer></app-footer>
 
+
+<app-modal [key]="trailer" *ngIf="show == true" ></app-modal>

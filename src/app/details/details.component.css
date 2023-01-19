@@ -124,3 +124,17 @@ label{
   color: black;
   font-weight: 500;
 }
+.iframe{
+  display: block;
+  margin: auto;
+}
+.btn-trailer{
+  margin-left: 30px;
+  line-height: 30px;
+  background-image: linear-gradient(194deg, #e50000, #530709);
+  font-weight: 520;
+  color: #000000;
+}
+.btn-trailer:active {
+  box-shadow: inset 0 5px 30px rgba(0, 0, 0, 0.5);
+}

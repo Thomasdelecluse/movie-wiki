@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {PopularMovie} from "../../service/popularMovie.service";
-import {BASE_URL} from "../constant/components.constant";
+import {BASE_URL, BASE_URL_EMBED} from "../constant/components.constant";
+import {ModalTrailerService} from "../../service/modal-trailer.service";
+
+
 export interface BelongsToCollection {
   id: number;
   name: string;
@@ -103,6 +106,21 @@ export interface Crew {
   department: string;
   job: string;
 }
+export interface Video {
+  id: number;
+  results: VideoItem[];
+}
+
+export interface VideoItem {
+  id: string;
+  iso_639_1: string;
+  iso_3166_1: string;
+  key: string;
+  name: string;
+  site: string;
+  size: number;
+  type: string;
+}
 
 export interface Actors {
   id: number;
@@ -137,15 +155,23 @@ export class DetailsComponent implements OnInit {
   season_text: string | undefined;
   genreTvDetails: string | undefined;
   rateTVDetails: number[] | undefined;
+  movieTrailer: Video | undefined;
+  trailer: string | undefined;
+  show: boolean = false;
 
 
 
 
-  constructor(private route: ActivatedRoute, private popularMovie: PopularMovie) {
+
+  constructor(private route: ActivatedRoute, private popularMovie: PopularMovie, private modalTrailerService: ModalTrailerService) {
     console.log('cc');
   }
 
   ngOnInit(): void {
+    this.modalTrailerService.getShow().subscribe((data) => {
+      this.show = data;
+    })
+
     console.log('cc');
     this.route.params.subscribe(params => {
       if( params['type'] === 'movie') {
@@ -166,6 +192,11 @@ export class DetailsComponent implements OnInit {
         })
         this.popularMovie.getDetailsActorMovie( params['id'], (response) => {
           this.actors = response;
+          console.log(this.actors);
+        });
+        this.popularMovie.getDetailsTrailerMovie( params['id'], (response) => {
+          this.movieTrailer = response;
+          this.trailer = this.movieTrailer?.results[1].key;
           console.log(this.actors);
         });
       } else {
@@ -199,5 +230,8 @@ export class DetailsComponent implements OnInit {
         })
       }
       });
+  }
+  openDialog(): void {
+    this.modalTrailerService.openModal();
   }
 }
