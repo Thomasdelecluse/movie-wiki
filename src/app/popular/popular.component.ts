@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {PopularMovie, PopularMoviesType} from 'src/service/popularMovie.service';
 import {BASE_URL} from "../constant/components.constant";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-popular',
@@ -13,7 +14,7 @@ export class PopularComponent implements OnInit {
   };
   baseUrl = BASE_URL;
 
-  constructor(private popularMovie: PopularMovie) {
+  constructor(private popularMovie: PopularMovie, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -23,5 +24,13 @@ export class PopularComponent implements OnInit {
       };
     })
   }
-
+  getTypeAndId(movie: any) {
+    this.router.navigate(['/details', movie.id, movie.media_type])
+      .then(() => {
+        console.log('Navigation successful!');
+      })
+      .catch(error => {
+        console.log('Navigation failed: ' + error);
+      });
+  }
 }

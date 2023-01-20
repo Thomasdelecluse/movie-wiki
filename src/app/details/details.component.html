@@ -23,7 +23,7 @@
             <img *ngFor="let _ of rateMovieDetails" src="/assets/img/etoile.png" width="15" height="15" alt="">
             <img *ngFor="let _ of negativeRateMovieDetails" [style.filter]="'saturate(0)'" src="/assets/img/etoile.png"
                  width="15" height="15" alt="">
-            <button class="btn-trailer" mat-raised-button (click)="openDialog()"><i class="fa-regular fa-circle-play"></i><span class="bo">Bande annonce</span></button>
+            <button class="btn-trailer" mat-raised-button (click)="openDialog()"><fa-icon [icon]="playButtonTrailer" ></fa-icon><span class="bo">Bande annonce</span></button>
           </div>
 
           <label for="description_movie"><strong>Synopsis</strong></label>

@@ -3,7 +3,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {PopularMovie} from "../../service/popularMovie.service";
 import {BASE_URL, BASE_URL_EMBED} from "../constant/components.constant";
 import {ModalTrailerService} from "../../service/modal-trailer.service";
-
+import {faPlay} from "@fortawesome/free-solid-svg-icons"
 
 export interface BelongsToCollection {
   id: number;
@@ -158,7 +158,7 @@ export class DetailsComponent implements OnInit {
   movieTrailer: Video | undefined;
   trailer: string | undefined;
   show: boolean = false;
-
+  playButtonTrailer = faPlay;
 
 
 

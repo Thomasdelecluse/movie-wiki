@@ -20,6 +20,8 @@ import {SafePipe} from "./safe-pipe";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from "@angular/material/button";
 import { ModalComponent } from './details/dialog/modal/modal.component';
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import { ModalComponent } from './details/dialog/modal/modal.component';
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
