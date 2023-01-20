@@ -16,10 +16,7 @@
   flex-direction: column;
   padding: 17px;
   border-radius: 14px;
-  background: hsl(359, 87%, 21%);
-  background: linear-gradient(12deg, hsl(359, 87%, 21%) 0%, hsl(330, 10%, 4%) 100%);
-  background: -moz-linear-gradient(12deg, hsl(359, 87%, 21%) 0%, hsl(330, 10%, 4%) 100%);
-  background: -webkit-linear-gradient(12deg, hsl(359, 87%, 21%) 0%, hsl(330, 10%, 4%) 100%);
+  background-color: #45424291;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .iframe{
