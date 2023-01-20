@@ -1,4 +1,4 @@
-import {Component, Inject, Input, OnInit} from '@angular/core';
+import {Component, HostListener, Inject, Input, OnInit} from '@angular/core';
 import {ModalTrailerService} from "../../../../service/modal-trailer.service";
 import {BASE_URL_EMBED} from "../../../constant/components.constant";
 
@@ -15,6 +15,9 @@ export class ModalComponent {
   constructor(private modalTrailerService: ModalTrailerService) { }
 
   closeModal() {
+    this.modalTrailerService.closeModal();
+  }
+  @HostListener('document:keydown.escape', ['$event']) onKeydownHandler(event: KeyboardEvent) {
     this.modalTrailerService.closeModal();
   }
 }
