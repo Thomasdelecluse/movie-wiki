@@ -1,5 +1,5 @@
 import {Component, Input} from "@angular/core";
-import {Cast} from "../details.component";
+import {Cast} from "../details.type";
 
 @Component({
   selector: 'app-detail-slider',
