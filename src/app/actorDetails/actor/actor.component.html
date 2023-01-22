@@ -1,1 +1,29 @@
-<p>actor works!</p>
+<app-navbar></app-navbar>
+<div class="page">
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title"> <strong>{{actorDetails?.name}}</strong></h3>
+    </div>
+    <div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-4 left-side">
+            <img [src]="BaseUrl + 'w300/' +actorDetails?.profile_path" alt="Actor Image" class="img-fluid">
+            <h4 class="title_birth">Date de naissance</h4>
+            <p>{{actorDetails?.birthday}} ({{ageFromString}} ans)</p>
+            <h4 class="title">Lieu de naissance</h4>
+            <p>{{actorDetails?.place_of_birth}}</p>
+          </div>
+          <div class="col-md-8">
+            <h4>Biographie</h4>
+            <hr>
+            <p>{{actorDetails?.biography}}</p>
+            <div *ngIf="actorDetails?.biography == ''">
+              <p>Il n'existe malheureusement pas de biographie pour cette acteur/actrice</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

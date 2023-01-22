@@ -1,0 +1,39 @@
+.page{
+  height: 100vh;
+  background-image: url("/assets/img/actor.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card{
+  background-color: #b8a4a4;
+  width: 1300px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5)  ;
+  border: none;
+  border-radius: 10px;
+}
+.card-header{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background: hsl(359, 87%, 21%);
+  background: linear-gradient(12deg, hsl(359, 87%, 21%) 0%, hsl(330, 10%, 4%) 100%);
+  background: -moz-linear-gradient(12deg, hsl(359, 87%, 21%) 0%, hsl(330, 10%, 4%) 100%);
+  background: -webkit-linear-gradient(12deg, hsl(359, 87%, 21%) 0%, hsl(330, 10%, 4%) 100%);
+}
+
+.card-title{
+  text-align: center;
+  color: white;
+}
+.title{
+  padding-top: 15px;
+  margin: 0;
+}
+.title_birth{
+  padding-top: 10px;
+}
+.left-side{
+  width: 300px;
+}
