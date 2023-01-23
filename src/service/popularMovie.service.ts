@@ -90,4 +90,8 @@ export class PopularMovie {
     const url = `${this.root}/person/${id}?api_key=${this.apiKey}&language=${this.language}`;
     return this.http.get(url).subscribe(callable);
   }
+  getMovieActor(id: number, callable: (popularMovies: any) => void) {
+    const url = `${this.root}/person/${id}/movie_credits?api_key=${this.apiKey}&language=${this.language}`;
+    return this.http.get(url).subscribe(callable);
+  }
 }

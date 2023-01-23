@@ -1,0 +1,24 @@
+.slider {
+  display: flex;
+  overflow-x: scroll;
+  padding: 10px 20px;
+  gap: 20px;
+  background-color: transparent;
+  overflow-y: hidden;
+  margin-left: 40px;
+  padding-top: 40px;
+}
+
+.slider::-webkit-scrollbar {
+  height: 8px;
+  width: 8px
+}
+
+.slider::-webkit-scrollbar-track {
+  background: transparent
+}
+
+.slider::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, .3);
+  border-radius: 20px
+}

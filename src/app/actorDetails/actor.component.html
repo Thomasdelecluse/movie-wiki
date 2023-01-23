@@ -21,7 +21,9 @@
             <div *ngIf="actorDetails?.biography == ''">
               <p>Il n'existe malheureusement pas de biographie pour cette acteur/actrice</p>
             </div>
+            <app-actor-slider class="slider" [items]="actorMovie"></app-actor-slider>
           </div>
+
         </div>
       </div>
     </div>

@@ -1,0 +1,5 @@
+<div class="slider">
+  <ng-container *ngFor=" let item of items">
+    <app-actor-slider-item [item]="item" *ngIf="item.poster_path" ></app-actor-slider-item>
+  </ng-container>
+</div>

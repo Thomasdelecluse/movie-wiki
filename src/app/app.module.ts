@@ -21,7 +21,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from "@angular/material/button";
 import { ModalComponent } from './details/dialog/modal/modal.component';
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
-import { ActorComponent } from './actorDetails/actor/actor.component';
+import { ActorComponent } from './actorDetails/actor.component';
+import {SliderActorComponent} from "./actorDetails/slider/sliderActor.component";
+import {ItemActorComponent} from "./actorDetails/slider/itemActor.component";
 
 
 @NgModule({
@@ -41,6 +43,9 @@ import { ActorComponent } from './actorDetails/actor/actor.component';
     DetailsComponent,
     ModalComponent,
     ActorComponent,
+    SliderActorComponent,
+    ItemActorComponent
+
   ],
   imports: [
     BrowserModule,
