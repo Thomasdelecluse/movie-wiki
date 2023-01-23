@@ -24,6 +24,7 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import { ActorComponent } from './actorDetails/actor.component';
 import {SliderActorComponent} from "./actorDetails/slider/sliderActor.component";
 import {ItemActorComponent} from "./actorDetails/slider/itemActor.component";
+import { UpcomingComponent } from './upcoming/upcoming.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import {ItemActorComponent} from "./actorDetails/slider/itemActor.component";
     ModalComponent,
     ActorComponent,
     SliderActorComponent,
-    ItemActorComponent
+    ItemActorComponent,
+    UpcomingComponent
 
   ],
   imports: [

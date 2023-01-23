@@ -8,7 +8,7 @@ import {Cast} from "../actor.component";
   templateUrl: './itemActor.component.html',
   styleUrls: ['./itemActor.component.css']
 })
-export class ItemActorComponent implements AfterViewInit{
+export class ItemActorComponent {
   baseUrl = BASE_URL;
   @Input() item: Cast | undefined;
 
@@ -16,7 +16,6 @@ export class ItemActorComponent implements AfterViewInit{
   }
 
   getMovieId(Item: any) {
-    console.log('mt', Item.media_type);
     this.router.navigate(['/details', Item.id , "movie"])
       .then(() => {
         console.log('Navigation successful!');
@@ -25,9 +24,4 @@ export class ItemActorComponent implements AfterViewInit{
         console.log('Navigation failed: ' + error);
       });
   }
-
-  ngAfterViewInit(): void {
-    console.log('il', this.item);
-  }
-
 }

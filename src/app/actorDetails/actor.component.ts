@@ -3,6 +3,7 @@ import {ActivatedRoute} from "@angular/router";
 import {PopularMovie} from "../../service/popularMovie.service";
 import {BASE_URL} from "../constant/components.constant";
 import {AgeFromDateString} from "age-calculator";
+import {TmdbService} from "../../service/TmdbService";
 
 export interface Actor {
   birthday: string;
@@ -34,7 +35,7 @@ export class ActorComponent implements OnInit {
   ageFromString: number | undefined;
   BaseUrl = BASE_URL;
   actorMovie: Cast[] | undefined;
-  constructor(private route: ActivatedRoute, private popularMovie: PopularMovie,) { }
+  constructor(private route: ActivatedRoute, private popularMovie: PopularMovie ) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
