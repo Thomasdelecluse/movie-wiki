@@ -75,7 +75,7 @@ export class DetailsComponent implements OnInit {
         });
         this.popularMovie.getDetailsTrailerMovie( params['id'], (response) => {
           this.movieTrailer = response;
-          this.trailer = this.movieTrailer?.results[1].key;
+          this.trailer = this.movieTrailer?.results[0].key;
           console.log(this.actors);
         });
       } else {
