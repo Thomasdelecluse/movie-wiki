@@ -1,1 +1,13 @@
-<p>upcoming works!</p>
+<div id="upcoming" class="page">
+  <div class="piks"></div>
+  <div class="container">
+    <div class="ratediv">
+      <h2>Bientôt au cinéma</h2>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="grid-item" *ngFor="let movie of bestUpcomingMovie" >
+      <img class="img"(click)="getTypeAndId(movie)"  [src]="base_url + 'w300/' + movie.poster_path">
+    </div>
+  </div>
+</div>

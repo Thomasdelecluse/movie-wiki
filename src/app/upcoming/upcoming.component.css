@@ -1,0 +1,63 @@
+.piks{
+  max-height: 500px;
+  background-image: url(/assets/img/piks.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 1000px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-position-y: 100%;
+  transform: scale(-1);
+}
+.container{
+  display: flex;
+  align-items: center;
+  padding-top: 400px;
+}
+
+.page{
+  padding-top: 150px;
+  position: relative;
+
+  background: hsl(359, 87%, 21%);
+  background: linear-gradient(12deg, hsl(359, 87%, 21%) 0%, hsl(330, 10%, 4%) 100%);
+  background: -moz-linear-gradient(12deg, hsl(359, 87%, 21%) 0%, hsl(330, 10%, 4%) 100%);
+  background: -webkit-linear-gradient(12deg, hsl(359, 87%, 21%) 0%, hsl(330, 10%, 4%) 100%);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 80px;
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-bottom: 200px;
+  padding-top: 160px;
+}
+.grid-item {
+  border-radius: 5px;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  display: flex;
+}
+.ratediv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #660708;
+  width: 600px;
+  height: 80px;
+  border-radius: 10px;
+  box-shadow: #001b2f 0px 0px 10px;
+  margin: 0 auto;
+}
+.ratediv h2{
+  font-weight: bold;
+  color: white;
+}
+
+.img{
+  width: 100%;
+}
