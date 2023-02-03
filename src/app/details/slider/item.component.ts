@@ -1,7 +1,8 @@
 import {Component, Input} from "@angular/core";
-import {Cast} from "../details.type";
+
 import {BASE_URL} from "../../constant/components.constant";
 import {Router} from "@angular/router";
+import {Cast} from "../../dto/actorDTO";
 
 @Component({
   selector: 'app-detail-slider-item',

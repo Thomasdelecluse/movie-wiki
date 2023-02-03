@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
 import {PopularMovie} from "../../service/popularMovie.service";
-import {BASE_URL, BASE_URL_EMBED} from "../constant/components.constant";
+import {BASE_URL} from "../constant/components.constant";
 import {ModalTrailerService} from "../../service/modal-trailer.service";
 import {faPlay} from "@fortawesome/free-solid-svg-icons";
-import {Actors, RootObject, Video} from "./details.type";
+import {movieDTO} from "../dto/movieDTO";
+import {actorDTO} from "../dto/actorDTO";
+import {videoDTO} from "../dto/videoDTO";
 
 @Component({
   selector: 'app-details',
@@ -15,7 +17,7 @@ export class DetailsComponent implements OnInit {
   baseUrl = BASE_URL;
   type = this.route.snapshot.paramMap.get('type');
   // variable movie
-  movieDetails: RootObject | undefined;
+  movieDetails: movieDTO | undefined;
   yearMovieDetails: string | undefined;
   genreMovieDetails: string | undefined;
   rateMovieDetails: number[] | undefined;
@@ -24,17 +26,17 @@ export class DetailsComponent implements OnInit {
   budget: string | undefined;
   revenu: string | undefined;
   movieTime: string | undefined;
-  actors: Actors | undefined;
+  actors: actorDTO | undefined;
 
   // variable tv
-  tvDetails: RootObject | undefined;
+  tvDetails: movieDTO | undefined;
   seasonNumber: number | undefined;
   episodeNumber: number | undefined;
   episode_text: string| undefined;
   season_text: string | undefined;
   genreTvDetails: string | undefined;
   rateTVDetails: number[] | undefined;
-  movieTrailer: Video | undefined;
+  movieTrailer: videoDTO | undefined;
   trailer: string | undefined;
   show: boolean = false;
   playButtonTrailer = faPlay;
