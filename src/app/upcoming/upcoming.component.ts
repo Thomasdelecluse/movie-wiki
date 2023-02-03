@@ -23,12 +23,12 @@ export class UpcomingComponent implements OnInit {
   constructor(private TmdbService: TmdbService, private popularMovie: PopularMovie, private router: Router) { }
 
   ngOnInit(): void {
-    this.TmdbService.getAllUpcomingMovies().then(r => {
-      this.upcomingMovie = r;
+    this.TmdbService.getAllUpcomingMovies().then(reponse => {
+      this.upcomingMovie = reponse;
 
-      console.log('cjnhfu', r.filter(movie => movie.original_title.includes('Ant-Man')));
+      console.log('cjnhfu', reponse.filter(movie => movie.original_title.includes('Ant-Man')));
 
-      this.bestUpcomingMovie = r.filter(movie => new Date(movie.release_date).getTime() > new Date().getTime() && movie.popularity > 20);
+      this.bestUpcomingMovie = reponse.filter(movie => new Date(movie.release_date).getTime() > new Date().getTime() && movie.popularity > 20);
       this.bestUpcomingMovie = this.bestUpcomingMovie.slice(0, 8);
       console.log("bm",this.bestUpcomingMovie);
     });
