@@ -61,3 +61,32 @@
 .img{
   width: 100%;
 }
+@media (max-width: 1350px) {
+  .grid{
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 100px;
+  }
+  .container{
+    padding-top: 309px;
+  }
+
+}
+@media (max-width: 730px) {
+  .page{
+    padding-top: 10px;
+  }
+  .container{
+    padding-top: 270px;
+  }
+  .grid{
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 25px;
+    padding-left: 22px;
+    padding-right: 22px;
+    padding-top: 42px;
+  }
+}
+

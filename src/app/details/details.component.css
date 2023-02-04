@@ -145,3 +145,9 @@ label{
   position: relative;
   top: -2px;
 }
+
+@media (max-width: 970px) {
+  .detail__header{
+    flex-direction: column;
+  }
+}

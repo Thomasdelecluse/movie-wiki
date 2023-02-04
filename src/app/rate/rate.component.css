@@ -99,4 +99,34 @@
   width: 100%;
 }
 
-
+@media (max-width: 1350px) {
+  .container{
+    display: block;
+  }
+  .container-radio{
+    position: relative;
+    right: 0px;
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .ratediv{
+    width: unset;
+    max-width: 600px;
+  }
+  .grid{
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 42px;
+  }
+}
+@media (max-width: 730px) {
+  .grid{
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 25px;
+    padding-left: 22px;
+    padding-right: 22px;
+    padding-top: 42px;
+  }
+}
