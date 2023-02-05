@@ -28,7 +28,7 @@ export class UpcomingComponent implements OnInit {
 
       console.log('cjnhfu', reponse.filter(movie => movie.original_title.includes('Ant-Man')));
 
-      this.bestUpcomingMovie = reponse.filter(movie => new Date(movie.release_date).getTime() > new Date().getTime() && movie.popularity > 20);
+      this.bestUpcomingMovie = reponse.filter(movie => new Date(movie.release_date).getTime() > new Date().getTime() && movie.popularity > 19);
       this.bestUpcomingMovie = this.bestUpcomingMovie.slice(0, 8);
       console.log("bm",this.bestUpcomingMovie);
     });

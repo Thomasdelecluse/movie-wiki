@@ -13,8 +13,11 @@
        [style.background-size]="'cover'">
     <div *ngIf="type == 'movie' ">
       <div class="detail__header">
-        <div class="detail__header__image">
+        <div *ngIf="screenWidth && screenWidth > 770" class="detail__header__image">
           <img [src]="baseUrl + 'w400/' + movieDetails?.poster_path" alt="Ce film ne contient pas d'image' ">
+        </div>
+        <div *ngIf="screenWidth && screenWidth <= 770" class="detail__header__image">
+          <img [src]="baseUrl + 'w300/' + movieDetails?.poster_path" alt="Ce film ne contient pas d'image' ">
         </div>
         <div class="detail__header__description">
           <h1 class="tagline">{{movieDetails?.tagline}}</h1>

@@ -14,6 +14,10 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   z-index: 100;
 }
+.img-moviewiki{
+  width: 70px;
+  height: 70px;
+}
 .navbar-nav{
   justify-content: right;
   width: 100%;
@@ -92,3 +96,46 @@ body {
 
 
 /*end of shearch button*/
+@media (max-width: 1350px) {
+  .navbar-brand{
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .img-moviewiki{
+    width: 60px;
+    height: 60px;
+  }
+}
+@media (max-width: 991px) {
+  .navbar-nav{
+    background: hsl(359, 87%, 21%);
+
+    background: linear-gradient(12deg, hsl(359, 87%, 21%) 0%, hsl(330, 10%, 4%) 100%);
+
+    background: -moz-linear-gradient(12deg, hsl(359, 87%, 21%) 0%, hsl(330, 10%, 4%) 100%);
+
+    background: -webkit-linear-gradient(12deg, hsl(359, 87%, 21%) 0%, hsl(330, 10%, 4%) 100%);
+    width: 330px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    margin-top: 2px;
+
+  }
+  .navbar-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+  .navbar-light .navbar-toggler {
+    color: rgb(255 255 255 / 55%);
+    border-color: rgb(255 255 255 / 10%);
+  }
+}
+@media (max-width: 970px) {
+  .popular{
+    display: none;
+  }
+
+
+}

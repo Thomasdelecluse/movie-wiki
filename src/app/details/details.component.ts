@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {PopularMovie} from "../../service/popularMovie.service";
 import {BASE_URL} from "../constant/components.constant";
@@ -7,6 +7,7 @@ import {faPlay} from "@fortawesome/free-solid-svg-icons";
 import {movieDTO} from "../dto/movieDTO";
 import {actorDTO} from "../dto/actorDTO";
 import {videoDTO} from "../dto/videoDTO";
+import {DOCUMENT} from "@angular/common";
 
 @Component({
   selector: 'app-details',
@@ -41,14 +42,20 @@ export class DetailsComponent implements OnInit {
   show: boolean = false;
   playButtonTrailer = faPlay;
 
+  screenWidth: number | undefined;
 
 
-
-  constructor(private route: ActivatedRoute, private popularMovie: PopularMovie, private modalTrailerService: ModalTrailerService) {
+  constructor(@Inject(DOCUMENT) private document: Document, private route: ActivatedRoute, private popularMovie: PopularMovie, private modalTrailerService: ModalTrailerService) {
     console.log('cc');
   }
 
   ngOnInit(): void {
+    const width = this.document.defaultView?.innerWidth;
+    this.screenWidth = typeof width === 'number' ? width : 0;
+    this.document.defaultView?.addEventListener('resize', () => {
+      const width = this.document.defaultView?.innerWidth;
+      this.screenWidth = typeof width === 'number' ? width : 0;
+    });
     this.modalTrailerService.getShow().subscribe((data) => {
       this.show = data;
     })
