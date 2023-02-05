@@ -22,3 +22,8 @@
   background-color: rgba(0, 0, 0, .3);
   border-radius: 20px
 }
+@media (max-width: 730px) {
+  .slider{
+    margin-left: 5px;
+  }
+}
