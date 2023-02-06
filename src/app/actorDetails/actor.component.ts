@@ -44,7 +44,7 @@ export class ActorComponent implements OnInit {
         this.ageFromString = new AgeFromDateString(this.actorDetails?.birthday ?? '').age;
         console.log(this.actorDetails);
       })
-      this.popularMovie.getMovieActor(params['id'], (response) => {
+      this.popularMovie.getActorMovie(params['id'], (response) => {
         this.actorMovie = response.cast;
         console.log('am', this.actorMovie);
       })

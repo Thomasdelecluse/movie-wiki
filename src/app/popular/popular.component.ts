@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {PopularMovie, PopularMoviesType} from 'src/service/popularMovie.service';
+import {PopularMovie} from 'src/service/popularMovie.service';
 import {BASE_URL} from "../constant/components.constant";
 import {Router} from "@angular/router";
+import {PopularMoviesDTO} from "../dto/popularMovieDTO";
 
 @Component({
   selector: 'app-popular',
@@ -9,7 +10,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./popular.component.css']
 })
 export class PopularComponent implements OnInit {
-  movies: PopularMoviesType = {
+  movies: PopularMoviesDTO = {
     results: []
   };
   baseUrl = BASE_URL;

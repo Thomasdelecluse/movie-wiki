@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {PopularMovie, RateMoviesType} from 'src/service/popularMovie.service';
+import {PopularMovie} from 'src/service/popularMovie.service';
 import {BASE_URL} from "../constant/components.constant";
 import {Router} from "@angular/router";
+import {RateMoviesDTO} from "../dto/rateMovieDTO";
 
 @Component({
   selector: 'app-rate',
@@ -9,7 +10,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./rate.component.css']
 })
 export class RateComponent implements OnInit {
-  movie: RateMoviesType = {
+  movie: RateMoviesDTO = {
     results: []
   };
   baseUrl = BASE_URL;
