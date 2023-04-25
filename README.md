@@ -1,27 +1,47 @@
-# Portfolio
+# MovieWiki
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.9.
+MovieWiki est une application front-end en Angular avec TypeScript qui utilise l'API de TMDB pour répertorier tous les films sortis et à venir en qu'elle que sorte un concurant d'Allociné. Voici les principales fonctionnalités.
 
-## Development server
+## fonctionnalités :
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+ - Section de recherche de films pour trouver facilement des films spécifiques.
+  
+     ![Photo](src/assets/img/readme/readme6.jpg)
+ 
+ - Liste des films et séries les plus populaires de la semaine.
+  
+     ![Photo](src/assets/img/readme/readme5.jpg)
+ 
+ - Liste des films et séries les plus populaires du jour.
+ 
+     ![Photo](src/assets/img/readme/readme2.jpg)
+ 
+ - Liste des films à venir avec un tri par note.
 
-## Code scaffolding
+ 
+     ![Photo](src/assets/img/readme/readme4.jpg)
+ 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+ - Page d'information détaillée pour chaque film, comprenant :
+    - Description
+    - Titre du film
+    - Bande annonce
+    - Note du film
+    - Budget consacré à la réalisation du film
+    - Gain généré par le film
+    - Liste de tous les acteurs
+    
+    ![Photo](src/assets/img/readme/readme1.jpg)
+    
+    - Possibilité de cliquer sur un acteur pour accéder à une description de l'acteur, sa date de naissance et tous les films dans lesquels il a joué.
+    
+    ![Photo](src/assets/img/readme/readme3.jpg)
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+En somme, MovieWiki est une application très complète qui permet aux utilisateurs de rechercher, de découvrir et d'en apprendre davantage sur les films et les acteurs qu'ils aiment.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
