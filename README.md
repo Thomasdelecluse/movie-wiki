@@ -1,6 +1,6 @@
 # MovieWiki
 
-MovieWiki est une application front-end en Angular avec TypeScript qui utilise l'API de TMDB pour répertorier tous les films sortis et à venir en qu'elle que sorte un concurant d'Allociné. Voici les principales fonctionnalités.
+MovieWiki est une application front-end en Angular avec TypeScript qui utilise l'API de TMDB pour répertorier tous les films sortis et à venir en qu'elle que sorte un concurrent d'Allociné. Voici les principales fonctionnalités.
 
 ## fonctionnalités :
 
